@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.explodingart:jmusic:1.6.4" type="repository">
+    <properties maven-id="com.explodingart:jmusic:1.6.4" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/explodingart/jmusic/1.6.4/jmusic-1.6.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
