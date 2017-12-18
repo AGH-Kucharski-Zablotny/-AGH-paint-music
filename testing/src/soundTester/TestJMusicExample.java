@@ -10,6 +10,14 @@ public class TestJMusicExample
         JMusicExample engine = new JMusicExample();
         engine.setTempo(Tempo.DEFAULT_TEMPO);
 
-        engine.playSoundAtFrequency(523);
+        for (int i = 0; i < 10; i++)
+        {
+            long startTime = System.currentTimeMillis();
+            engine.playSoundAtFrequency(523);
+            long stopTime = System.currentTimeMillis();
+            System.out.println("(" + i + ") " + (stopTime-startTime));
+        }
+
+
     }
 }

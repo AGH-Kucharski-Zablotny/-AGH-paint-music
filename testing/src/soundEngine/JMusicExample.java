@@ -1,6 +1,7 @@
 package soundEngine;
 
 import jm.JMC;
+import jm.music.data.Note;
 import jm.music.data.Part;
 import jm.music.data.Phrase;
 import jm.music.data.Score;
@@ -45,34 +46,34 @@ public class JMusicExample implements JMC
     public void playInstrumentAtFrequency(int instrument, double frequency)
     {
         // Declare score and sine wave instrument
-//        Score s = new Score();
-//        s.setTempo(tempo);
-//        Part p = new Part(instrument);
-//
-//        // Create note at pitch given by user (full note)
-//        Note freqNote = new Note(frequency, 1);
-//
-//        // Create phrase and add note to the score
-//        Phrase phrase = new Phrase(freqNote);
-//        p.addPhrase(phrase);
-//        s.addPart(p);
-//
-//
-//        // Play sound
-//        Play.audio(phrase, inst);
-//
-//        Score s = new Score("CPhrase class example", 120);
-//        Part guitarPart = new Part("Guitar",JAZZ_GUITAR, 0);
-//        Part bassPart = new Part("Bass", ACOUSTIC_BASS, 1);
-//        Part ridePart = new Part("Drums", 0, 9);
-//        Part snarePart = new Part("Drums 2", 0, 9);
-//        Part saxPart = new Part("Sax", SAXOPHONE, 2);
-//        Phrase bassPhrase = new Phrase();
-//
-//        //Let us know things have started
-//        System.out.println("Creating chord progression . . .");
-//
-//        //choose rootPitch notes around the cycle of fifths
+        Score s = new Score();
+        s.setTempo(tempo);
+        Part p = new Part(instrument);
+
+        // Create note at pitch given by user (full note)
+        Note freqNote = new Note(frequency, 1);
+
+        // Create phrase and add note to the score
+        Phrase phrase = new Phrase(freqNote);
+        p.addPhrase(phrase);
+        s.addPart(p);
+
+
+        // Play sound
+        //Play.audio(phrase, instrument);
+
+        Score sc = new Score("CPhrase class example", 120);
+        Part guitarPart = new Part("Guitar",JAZZ_GUITAR, 0);
+        Part bassPart = new Part("Bass", ACOUSTIC_BASS, 1);
+        Part ridePart = new Part("Drums", 0, 9);
+        Part snarePart = new Part("Drums 2", 0, 9);
+        Part saxPart = new Part("Sax", SAXOPHONE, 2);
+        Phrase bassPhrase = new Phrase();
+
+        //Let us know things have started
+        System.out.println("Creating chord progression . . .");
+
+        //choose rootPitch notes around the cycle of fifths
 //        int rootPitch = c4; //set start pitch to C
 //        for (int i=0;i<6;i++) {
 //            for (int j=0;j<4;j++) { // 4 chords to a bar
@@ -95,20 +96,23 @@ public class JMusicExample implements JMC
 ////            saxPart.addPhrase(JazzSax.melody(rootPitch));
 //            rootPitch += 5;
 //        }
-//
-//        //pack the parts into a score
+
+        //pack the parts into a score
 //        s.addPart(guitarPart);
 //        s.addPart(bassPart);
 //        s.addPart(ridePart);
 //        s.addPart(snarePart);
 //        s.addPart(saxPart);
-//
-//        //display the music
-//        View.show(s);
-//
-//        // write the score to a MIDIfile
-//        Play.midi(s);
-//
-//    }
+
+        //display the music
+        //View.show(s);
+
+        // write the score to a MIDIfile
+        long statTime = System.currentTimeMillis();
+        Play.midi(s);
+        long stopTime = System.currentTimeMillis();
+        System.out.println("Time of playing: " + (stopTime - statTime));
+
     }
+
 }
